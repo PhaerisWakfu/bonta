@@ -1,0 +1,4 @@
+# Auto Configuration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.gitee.phaeris.bonta.config.DebeziumConfiguration,\
+com.gitee.phaeris.bonta.registrar.ConfigurationImportBeanDefinitionRegistrar
