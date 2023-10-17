@@ -19,7 +19,7 @@ bonta:
 spring:
   task:
     execution:
-      thread-name-prefix: scindapsus-
+      thread-name-prefix: bonta-
       pool:
         core-size: 8
         max-size: 16
@@ -31,4 +31,4 @@ spring:
         await-termination-period: 60s
 logging:
   level:
-    com.scindapsus.dbzm: debug
+    com.gitee.phaeris.bonta: debug

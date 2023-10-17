@@ -10,7 +10,7 @@
 
     <name>bonta</name>
 
-    <description>基于debezium的cdc框架</description>
+    <description>SpringBoot内嵌式CDC框架</description>
 
     <url>https://gitee.com/phaeris/bonta</url>
 
@@ -79,6 +79,20 @@
         <dependency>
             <groupId>io.debezium</groupId>
             <artifactId>debezium-embedded</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>kafka-log4j-appender</artifactId>
+                    <groupId>org.apache.kafka</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!--framework-->

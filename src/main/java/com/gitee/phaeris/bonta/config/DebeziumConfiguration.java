@@ -32,11 +32,8 @@ public class DebeziumConfiguration {
     @Bean
     public CDCEvent defaultPrintEvent() {
         return (destination, key, value) -> {
-            if (log.isDebugEnabled()) {
-                log.debug("destination ===> {}", destination);
-                log.debug("key ===> {}", key);
-                log.debug("change data ===>\n{}", value);
-            }
+            if (log.isDebugEnabled())
+                log.debug("dest[{}] key[{}] change data ===>\n{}", destination, key, value);
         };
     }
 }
