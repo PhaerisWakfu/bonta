@@ -35,7 +35,7 @@ public class CacheConsistencyEvent implements CDCEvent {
 
     @Override
     public void onMessage(String destination, Map<String, Object> key, ChangeData value) {
-        Envelope.Operation operation = Envelope.Operation.forCode(value.getOp());
+        Envelope.Operation operation = value.getOperation();
         switch (operation) {
             case UPDATE:
             case DELETE:
@@ -44,9 +44,6 @@ public class CacheConsistencyEvent implements CDCEvent {
                 }
                 //监听到数据库变更处理缓存一致性
                 log.info("删除{}相关缓存", key);
-                break;
-            case CREATE:
-                log.info("{} ==> {}", key, operation);
                 break;
         }
     }

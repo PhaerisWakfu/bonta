@@ -1,5 +1,6 @@
 package com.gitee.phaeris.bonta;
 
+import io.debezium.data.Envelope;
 import lombok.Data;
 
 import java.util.Map;
@@ -27,6 +28,14 @@ public class ChangeData {
      * 操作类型{@link io.debezium.data.Envelope.Operation}
      */
     private String op;
+
+    /**
+     * 获取操作类型枚举
+     */
+    public Envelope.Operation getOperation() {
+        return Envelope.Operation.forCode(op);
+    }
+
 
     @Data
     public static class Source {
