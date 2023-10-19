@@ -61,8 +61,8 @@ public class ChangeDataCaptureListener {
         }
     }
 
-    private void receiveChangeEvent(ChangeEvent<String, String> changeEvent) {
-        Optional.ofNullable(changeEvent).ifPresent(ce -> {
+    private void receiveChangeEvent(ChangeEvent<String, String> event) {
+        Optional.ofNullable(event).ifPresent(ce -> {
             JSONObject key = Optional.ofNullable(ce.key())
                     .map(k -> JSON.parseObject(k).getJSONObject(CHANGE_DATA_PAYLOAD))
                     .orElse(null);

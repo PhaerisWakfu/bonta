@@ -1,5 +1,6 @@
 package com.gitee.phaeris.bonta;
 
+import cn.hutool.core.bean.BeanUtil;
 import io.debezium.data.Envelope;
 import lombok.Data;
 
@@ -28,6 +29,15 @@ public class ChangeData {
      * 操作类型{@link io.debezium.data.Envelope.Operation}
      */
     private String op;
+
+
+    public <T> T getBefore(Class<T> clazz) {
+        return BeanUtil.toBean(before, clazz);
+    }
+
+    public <T> T getAfter(Class<T> clazz) {
+        return BeanUtil.toBean(after, clazz);
+    }
 
     /**
      * 获取操作类型枚举

@@ -38,6 +38,7 @@
         <debezium.version>1.7.0.Final</debezium.version>
         <spring-boot.version>2.7.3</spring-boot.version>
         <fastjson.version>2.0.40</fastjson.version>
+        <hutool.version>5.8.22</hutool.version>
 
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -66,6 +67,11 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -114,6 +120,10 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-core</artifactId>
         </dependency>
 
         <!--test-->
