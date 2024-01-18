@@ -42,6 +42,7 @@ public class DebeziumConfigBuilder {
                 .with("database.hostname", properties.getHostname())
                 .with("database.port", properties.getPort())
                 .with("database.user", properties.getUser())
+                .with("provide.transaction.metadata","true")
                 .with("database.password", properties.getPassword());
         builder = StringUtils.hasText(properties.getDatabaseWhitelist())
                 ? builder.with("database.whitelist", properties.getDatabaseWhitelist())

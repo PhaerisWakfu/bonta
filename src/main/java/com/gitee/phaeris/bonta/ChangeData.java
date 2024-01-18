@@ -30,6 +30,11 @@ public class ChangeData {
      */
     private String op;
 
+    /**
+     * 事务相关
+     */
+    private Transaction transaction;
+
 
     public <T> T getBefore(Class<T> clazz) {
         return BeanUtil.toBean(before, clazz);
@@ -46,6 +51,18 @@ public class ChangeData {
         return Envelope.Operation.forCode(op);
     }
 
+    @Data
+    public static class Transaction {
+
+        /**
+         * 事务id
+         */
+        private String id;
+
+        private Integer total_order;
+
+        private Integer data_collection_order;
+    }
 
     @Data
     public static class Source {
